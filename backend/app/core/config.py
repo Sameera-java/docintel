@@ -34,7 +34,7 @@ class Settings:
     # Logging
     LOG_LEVEL: str = os.getenv("LOG_LEVEL", "INFO")
     
-    TESSERACT_CMD: str = os.getenv("TESSERACT_CMD", "")
+    
 
     APP_NAME: str = "Document Intelligence Platform"
     API_PREFIX: str = "/api/v1"
