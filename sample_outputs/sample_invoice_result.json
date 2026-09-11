@@ -1,0 +1,58 @@
+{
+  "document_name": "test_invoice.pdf",
+  "document_type": "invoice",
+  "processing_status": "PASS",
+  "overall_confidence": null,
+  "file_validation": {
+    "file_type": "application/pdf",
+    "is_supported": true,
+    "is_readable": true,
+    "page_count": 1,
+    "status": "PASS",
+    "reason": null
+  },
+  "extracted_data": {
+    "invoice_number": {"value": "INV-2026-0042", "source_text": "Invoice Number: INV-2026-0042", "page_number": 1},
+    "invoice_date": {"value": "2026-09-01", "source_text": "Invoice Date: 2026-09-01", "page_number": 1},
+    "vendor_name": {"value": "Afreen Stitches", "source_text": "Vendor: Afreen Stitches", "page_number": 1},
+    "customer_name": {"value": "Green Valley Resorts", "source_text": "Customer: Green Valley Resorts", "page_number": 1},
+    "currency": {"value": "INR", "source_text": "Total Amount Due: INR 6825.00", "page_number": 1},
+    "subtotal": {"value": 6500.00, "source_text": "Subtotal: 6500.00", "page_number": 1},
+    "tax_amount": {"value": 325.00, "source_text": "Tax (5 percent): 325.00", "page_number": 1},
+    "discount": {"value": 0.00, "source_text": "Discount: 0.00", "page_number": 1},
+    "total_amount": {"value": 6825.00, "source_text": "Total Amount Due: INR 6825.00", "page_number": 1},
+    "table:line_items": [
+      {"description": "Silk Kurta Stitching", "quantity": 10, "unit_price": 500.00, "amount": 5000.00},
+      {"description": "Blouse Stitching", "quantity": 5, "unit_price": 300.00, "amount": 1500.00}
+    ]
+  },
+  "validation": {
+    "checks": [
+      {
+        "name": "invoice_total_check",
+        "formula": "subtotal + tax_amount - discount",
+        "operands": {"subtotal": 6500.0, "tax_amount": 325.0, "discount": 0.0},
+        "calculated_value": 6825.0,
+        "reported_value": 6825.0,
+        "variance": 0.0,
+        "status": "PASS"
+      },
+      {
+        "name": "line_items_sum_check",
+        "formula": "sum(line_items.amount) \u2248 subtotal",
+        "operands": {"line_items_sum": 6500.0},
+        "calculated_value": 6500.0,
+        "reported_value": 6500.0,
+        "variance": 0.0,
+        "status": "PASS"
+      }
+    ],
+    "overall_status": "PASS",
+    "issues": []
+  },
+  "processing_metadata": {
+    "ocr_used": false,
+    "processed_at": "2026-09-10T08:55:17Z",
+    "processing_time_ms": 1840
+  }
+}

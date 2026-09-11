@@ -1,0 +1,26 @@
+{
+  "document_name": "notes.txt",
+  "document_type": "invoice",
+  "processing_status": "FAILED",
+  "overall_confidence": null,
+  "file_validation": {
+    "file_type": "text/plain",
+    "is_supported": false,
+    "is_readable": true,
+    "page_count": null,
+    "status": "FAILED",
+    "reason": "Only PDF / JPG / PNG documents are supported."
+  },
+  "extracted_data": {},
+  "validation": {
+    "checks": [],
+    "overall_status": "NOT_APPLICABLE",
+    "issues": []
+  },
+  "processing_metadata": {
+    "ocr_used": false,
+    "processed_at": "2026-09-10T08:56:00Z",
+    "processing_time_ms": 3
+  },
+  "error_code": "UNSUPPORTED_FILE_TYPE"
+}

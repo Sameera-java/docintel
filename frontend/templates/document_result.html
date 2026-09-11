@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document Result</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>📄 <span id="doc-title">Document Result</span></h1>
+    <a href="/" class="back-link">&larr; Back to dashboard</a>
+  </header>
+
+  <main>
+    <section id="summary-card" class="dashboard-card"></section>
+
+    <section class="dashboard-card">
+      <h2>Extracted Fields</h2>
+      <table id="fields-table">
+        <thead><tr><th>Field</th><th>Value</th><th>Source Text</th><th>Page</th></tr></thead>
+        <tbody id="fields-table-body"></tbody>
+      </table>
+    </section>
+
+    <section class="dashboard-card" id="tables-section"></section>
+
+    <section class="dashboard-card">
+      <h2>Financial Validation</h2>
+      <table id="validation-table">
+        <thead><tr><th>Check</th><th>Formula</th><th>Calculated</th><th>Reported</th><th>Variance</th><th>Status</th></tr></thead>
+        <tbody id="validation-table-body"></tbody>
+      </table>
+    </section>
+
+    <section class="dashboard-card">
+      <h2>Raw JSON</h2>
+      <pre id="raw-json"></pre>
+    </section>
+  </main>
+
+  <script>
+    const DOCUMENT_NAME = {{ document_name | tojson }};
+  </script>
+  <script src="/static/js/result.js"></script>
+</body>
+</html>
